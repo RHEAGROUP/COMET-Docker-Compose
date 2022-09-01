@@ -26,62 +26,62 @@ IF %1==testdown GOTO TestDown
 GOTO End
 
 :Strt
-CALL docker-compose start
+CALL docker compose start
 GOTO End
 
 :Stp
-CALL docker-compose stop
+CALL docker compose stop
 GOTO End
 
 :Up
-CALL docker-compose down --remove-orphans
-CALL docker-compose up -d
+CALL docker compose down --remove-orphans
+CALL docker compose up -d
 GOTO End
 
 :Update
-CALL docker-compose down --remove-orphans
-CALL docker-compose pull
+CALL docker compose down --remove-orphans
+CALL docker compose pull
 GOTO End
 
 :Down
-CALL docker-compose down --remove-orphans
+CALL docker compose down --remove-orphans
 GOTO End
 
 :Reboot
-CALL docker-compose down
-CALL docker-compose up -d
+CALL docker compose down
+CALL docker compose up -d
 GOTO End
 
 :Rc
-CALL docker-compose -f docker-compose-rc.yml down --remove-orphans
-CALL docker-compose -f docker-compose-rc.yml up -d
+CALL docker compose -f docker-compose-rc.yml down --remove-orphans
+CALL docker compose -f docker-compose-rc.yml up -d
 GOTO End
 
 :RcUpdate
-CALL docker-compose -f docker-compose-rc.yml down --remove-orphans
-CALL docker-compose -f docker-compose-rc.yml pull
+CALL docker compose -f docker-compose-rc.yml down --remove-orphans
+CALL docker compose -f docker-compose-rc.yml pull
 GOTO End
 
 :RcDown
-CALL docker-compose -f docker-compose-rc.yml down --remove-orphans
+CALL docker compose -f docker-compose-rc.yml down --remove-orphans
 GOTO End
 
 :TestRc
-CALL docker-compose -f docker-compose-rc-test.yml down --remove-orphans
-CALL docker-compose -f docker-compose-rc-test.yml up -d
+CALL docker compose -f docker-compose-rc-test.yml down --remove-orphans
+CALL docker compose -f docker-compose-rc-test.yml up -d
 GOTO End
 
 :TestRcDown
-CALL docker-compose -f docker-compose-rc-test.yml down --remove-orphans
+CALL docker compose -f docker-compose-rc-test.yml down --remove-orphans
 GOTO End
 
 :Test
-CALL docker-compose -f docker-compose-test.yml down --remove-orphans
-CALL docker-compose -f docker-compose-test.yml up -d
+CALL docker compose -f docker-compose-test.yml down --remove-orphans
+CALL docker compose -f docker-compose-test.yml up -d
 GOTO End
 
 :TestDown
-CALL docker-compose -f docker-compose-test.yml down --remove-orphans
+CALL docker compose -f docker-compose-test.yml down --remove-orphans
 GOTO End
 
 :End
